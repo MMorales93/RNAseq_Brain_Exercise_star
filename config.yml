@@ -1,0 +1,10 @@
+samples:
+  -  brain_rep1_trimmed
+  -  brain_rep2_trimmed
+  -  brain_rep3_trimmed
+  -  ref_rep1_trimmed
+  -  ref_rep2_trimmed
+  -  ref_rep3_trimmed
+  
+star: 
+  -  star/star_hg38

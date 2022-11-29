@@ -1,0 +1,15 @@
+rule all:
+	input:
+		expand("{sample}.genes.results", sample=config["samples"])
+		
+rule count_reads:
+	input:
+		fw="{sample}_1.fastq",
+		rv="{sample}_2.fastq"
+	output:
+		outfile="{sample}.genes.results"
+	params:
+		star=config["star"],
+		library="{sample}"
+	shell:
+		"rsem-calculate-expression -p 4 --star --paired-end --output-genome-bam {input.fw} {input.rv} {params.star} {params.library}"
